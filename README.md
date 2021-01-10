@@ -8,5 +8,6 @@
 - not done yet :(
 
 ## Made With
-- Rust :crab:
-- [rodio](https://crates.io/crates/rodio) :radio:
+- Python :snake:
+- [pygame.mixer](https://www.pygame.org/docs/ref/mixer.html) :joystick:
+- [rich](https://github.com/willmcgugan/rich) :lipstick:
