@@ -25,6 +25,7 @@ def main():
 
 def cli():
     console.clear()
+    welcome()
     rain()
 
     console.print(Panel('[bold]Welcome to [default on red]onsen[/]![/] ([italic]tattoo-friendly)[/]', expand=True))
@@ -50,11 +51,13 @@ def cli():
 
 def init():
     global channel1
+    global channel2
     global console
     global help_commands
 
     mixer.init()
     channel1 = mixer.Channel(0)
+    channel2 = mixer.Channel(1)
     console = Console()
     help_commands = """[default on red]bath[/] - take a bath in our hot springs :umbrella: 
 [default on red]volume[/] - turn down [strike]for what[/] :arrow_up_down:
@@ -72,6 +75,12 @@ def stop():
 def set_volume(value):
     console.print('[blue]setting volume to ' + str(value) + '...')
     channel1.set_volume(value / 100)
+
+# sounds have to be .wav
+# def welcome():
+#     current_path = Path(__file__).parent.absolute()
+#     welcome_sound = mixer.Sound(str(current_path) + '/assets/welcome.mp3')
+#     channel1.play(welcome_sound)
 
 ## handle CTRL + C
 def signal_handler(signal, frame):
