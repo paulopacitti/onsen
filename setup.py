@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setup(
     name='onsen',
     packages=['onsen'],
-    version='0.1.3',
+    version='0.1.0',
     license='MIT',
     author='Paulo Pacitti',
     author_email='ppacitti@outlook.com',
