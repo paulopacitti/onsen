@@ -1,0 +1,186 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash -l
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /home/paulopacitti/Documents/Projects/onsen
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 88
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 15
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: null
+    style:
+      backgroundColor: "#2E3440"
+      boxShadow: none
+      margin: 0px
+
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Hack"
+  
+  # The size of the font
+  fontSize: 14
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "#2E3440"
+    foreground: "#D8DEE9"
+    cursor: "#81A1C1"
+    black: "#3B4252"
+    red: "#BF616A"
+    green: "#A3BE8C"
+    yellow: "#EBCB8B"
+    blue: "#81A1C1"
+    magenta: "#B48EAD"
+    cyan: "#88C0D0"
+    white: "#E5E9F0"
+    brightBlack: "#4C566A"
+    brightRed: "##BF616A"
+    brightGreen: "#A3BE8C"
+    brightYellow: "#EBCB8B"
+    brightBlue: "#81A1C1"
+    brightMagenta: "#B48EAD"
+    brightCyan: "#8FBCBB"
+    brightWhite: "#ECEFF4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 308
+    content: "\e[0;32mpaulopacitti \e[0;33mお茶 \e[0;36monsen\e[0;37m ⚡ \e[0m "
+  - delay: 1147
+    content: o
+  - delay: 39
+    content: 'n'
+  - delay: 49
+    content: s
+  - delay: 71
+    content: e
+  - delay: 137
+    content: 'n'
+  - delay: 263
+    content: "\r\n"
+  - delay: 92
+    content: "\e[2J\e[H╭──────────────────────────────────────────────────────────────────────────────────────╮\r\n│ \e[1mWelcome to \e[0m\e[1;39;41monsen\e[0m\e[1m!\e[0m (\e[3mtattoo-friendly)\e[0m                                                  │\r\n╰──────────────────────────────────────────────────────────────────────────────────────╯\r\n\e[3mMay I help you? \e[0m\e[1;3m(\e[0m\e[3mいらっしゃいませ\e[0m\e[1;3m)\e[0m type \e[39;41mhelp\e[0m\r\n♨  \e[1;31m>\e[0m "
+  - delay: 1541
+    content: v
+  - delay: 80
+    content: o
+  - delay: 191
+    content: l
+  - delay: 257
+    content: u
+  - delay: 72
+    content: m
+  - delay: 120
+    content: e
+  - delay: 320
+    content: "\r\n\U0001F327  \e[1;34mHow much water do you want? (1 to 100)\e[0m: "
+  - delay: 1125
+    content: '1'
+  - delay: 128
+    content: '0'
+  - delay: 192
+    content: "\r\n\e[34msetting volume to \e[0m\e[1;34m10\e[0m\e[34m...\e[0m\r\n♨  \e[1;31m>\e[0m "
+  - delay: 589
+    content: s
+  - delay: 423
+    content: t
+  - delay: 73
+    content: o
+  - delay: 79
+    content: p
+  - delay: 177
+    content: "\r\n♨  \e[1;31m>\e[0m "
+  - delay: 893
+    content: b
+  - delay: 80
+    content: a
+  - delay: 295
+    content: t
+  - delay: 97
+    content: h
+  - delay: 264
+    content: "\r\n\e[34mRelax\e[0m\e[34m...\e[0m\r\n"
+  - delay: 19
+    content: "♨  \e[1;31m>\e[0m "
+  - delay: 1363
+    content: q
+  - delay: 168
+    content: u
+  - delay: 39
+    content: i
+  - delay: 193
+    content: t
+  - delay: 456
+    content: "\r\n\e[3mCome back soon!\e[0m \e[1m(\e[0mありがとうございました\e[1m)\e[0m\r\n"
+  - delay: 1000
+    content: "\e[0;32mpaulopacitti \e[0;33mお茶 \e[0;36monsen\e[0;37m ⚡ \e[0m "
+  - delay: 1000
+    content: " "

@@ -26,7 +26,7 @@ def main():
 def cli():
     console.clear()
     welcome()
-    rain()
+    bath()
 
     console.print(Panel('[bold]Welcome to [default on red]onsen[/]![/] ([italic]tattoo-friendly)[/]', expand=True))
     console.print('[italic]May I help you? (いらっしゃいませ)[/] type [default on red]help[/]')
@@ -35,7 +35,7 @@ def cli():
        
         if command == 'bath':
             console.print('[blue]Relax...')
-            rain()
+            bath()
         if command == 'volume':
             value = IntPrompt.ask(':cloud_with_rain:  [bold blue]How much water do you want? (1 to 100)[/]')
             set_volume(value)
@@ -45,42 +45,50 @@ def cli():
             stop()
         if command == 'quit':
             console.print('[italic]Come back soon![/] (ありがとうございました)')
-            break
-        
+            break 
     return
 
 def init():
     global channel1
     global channel2
+    global channel3
     global console
     global help_commands
 
     mixer.init()
     channel1 = mixer.Channel(0)
     channel2 = mixer.Channel(1)
+    channel3 = mixer.Channel(2)
+    channel2.set_volume(0.25)
+    channel3.set_volume(0.25)
+    
     console = Console()
     help_commands = """[default on red]bath[/] - take a bath in our hot springs :umbrella: 
 [default on red]volume[/] - turn down [strike]for what[/] :arrow_up_down:
 [default on red]stop[/] - shut [bold]everything[/] up :speaker:
 [default on red]quit[/] - I [italic]think[/] you know what this does :x:"""
 
-def rain():
+def bath():
     current_path = Path(__file__).parent.absolute()
-    rain = mixer.Sound(str(current_path) + '/assets/water.wav')
-    channel1.play(rain, loops = -1)
+    water = mixer.Sound(str(current_path) + '/assets/water.wav')
+    bell = mixer.Sound(str(current_path) + '/assets/bell.wav')
+    channel1.play(water, loops = -1)
+    channel3.play(bell)
 
 def stop():
     channel1.stop()
+    current_path = Path(__file__).parent.absolute()
+    bell = mixer.Sound(str(current_path) + '/assets/bell.wav')
+    channel3.play(bell)
 
 def set_volume(value):
     console.print('[blue]setting volume to ' + str(value) + '...')
     channel1.set_volume(value / 100)
 
-# sounds have to be .wav
-# def welcome():
-#     current_path = Path(__file__).parent.absolute()
-#     welcome_sound = mixer.Sound(str(current_path) + '/assets/welcome.mp3')
-#     channel1.play(welcome_sound)
+def welcome():
+    current_path = Path(__file__).parent.absolute()
+    welcome_sound = mixer.Sound(str(current_path) + '/assets/welcome.wav')
+    channel2.play(welcome_sound)
 
 ## handle CTRL + C
 def signal_handler(signal, frame):
