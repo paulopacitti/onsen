@@ -31,13 +31,16 @@ def cli():
     console.print(Panel('[bold]Welcome to [default on red]onsen[/]![/] ([italic]tattoo-friendly)[/]', expand=True))
     console.print('[italic]May I help you? (いらっしゃいませ)[/] type [default on red]help[/]')
     while True:
-        command = console.input(":hotsprings:  [bold red]>[/] ")
+        command = console.input(":hotsprings:  [bold red]>[/] ").strip().lower()
        
         if command == 'bath':
             console.print('[blue]Relax...')
             bath()
-        if command == 'volume':
-            value = IntPrompt.ask(':cloud_with_rain:  [bold blue]How much water do you want? (1 to 100)[/]')
+        if "volume" in command:
+            if len(command.split()) > 1 and command.split()[0] == "volume" and command.split()[1].isdigit(): 
+                value = int(command.split()[1])
+            else:
+                value = IntPrompt.ask(':cloud_with_rain:  [bold blue]How much water do you want? (1 to 100)[/]')
             set_volume(value)
         if command == 'help':
             console.print(help_commands)
